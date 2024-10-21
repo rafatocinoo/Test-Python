@@ -1,6 +1,6 @@
 # test-ej-3.9.py
 import unittest
-from eje_3_9 import contar_vocales  # Importamos la función desde el archivo original
+from ej_3_9 import contar_vocales  # Importamos la función desde el archivo original
 
 class TestContarVocales(unittest.TestCase):
     def test_casos_varios(self):
