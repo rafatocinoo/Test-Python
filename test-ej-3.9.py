@@ -1,3 +1,5 @@
+# eje-3.9.py
+
 # Función que cuenta las vocales en una palabra
 def contar_vocales(palabra):
     palabra = palabra.lower()
@@ -10,23 +12,13 @@ def contar_vocales(palabra):
 
     return conteo_vocales
 
-# Función para realizar pruebas
-def test_contar_vocales():
-    # Lista de casos de prueba
-    casos_de_prueba = [
-        ("murcielago", {'a': 2, 'e': 1, 'i': 1, 'o': 1, 'u': 1}),
-        ("xyz", {'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0}),
-        ("aeropuerto", {'a': 1, 'e': 1, 'i': 0, 'o': 1, 'u': 2}),
-        ("AEIOU", {'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1}),
-        ("banana", {'a': 3, 'e': 0, 'i': 0, 'o': 0, 'u': 0}),
-    ]
+# Solicitar al usuario una palabra
+if __name__ == "__main__":
+    palabra = input("Introduce una palabra: ").lower()
 
-    # Ejecutar pruebas
-    for palabra, resultado_esperado in casos_de_prueba:
-        resultado_obtenido = contar_vocales(palabra)
-        assert resultado_obtenido == resultado_esperado, f"Error: para '{palabra}' se esperaba {resultado_esperado} y se obtuvo {resultado_obtenido}"
+    # Llamar a la función para contar las vocales
+    resultado = contar_vocales(palabra)
 
-    print("Todas las pruebas pasaron.")
-
-# Ejecutar las pruebas
-test_contar_vocales()
+    # Mostrar los resultados
+    for vocal, conteo in resultado.items():
+        print(f"La vocal '{vocal}' aparece {conteo} veces.")
